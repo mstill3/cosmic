@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/objects/Earth.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/space.png" type="Texture" id=2]
+[ext_resource path="res://src/objects/Mars.tscn" type="PackedScene" id=3]
+
+[node name="Space" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchor_left = 0.000773937
+anchor_right = 1.00077
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mars" parent="." instance=ExtResource( 3 )]
+
+[node name="Earth" parent="." instance=ExtResource( 1 )]
