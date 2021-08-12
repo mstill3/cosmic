@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/objects/Interactable.gd" type="Script" id=1]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [  ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 2.16079, 0.641041 )
+
+[sub_resource type="CircleShape2D" id=3]
+
+[node name="Interactable" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.730582, -1.26113 )
+scale = Vector2( 1.83987, 1.82327 )
+frames = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.282655, 5.50904 )
+scale = Vector2( 9.68904, 10.681 )
+shape = SubResource( 2 )
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+scale = Vector2( 2.25417, 2.25417 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="PlayerDetector" to="." method="_on_PlayerDetector_body_entered"]
+[connection signal="body_exited" from="PlayerDetector" to="." method="_on_PlayerDetector_body_exited"]

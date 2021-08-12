@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/objects/WaterCooler.gd" type="Script" id=1]
+[ext_resource path="res://src/objects/Interactable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/watertank.png" type="Texture" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "tank_full",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 0.924361, 0.635766 )
+
+[node name="WaterCooler" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" parent="." index="0"]
+frames = SubResource( 1 )
+animation = "tank_full"
+playing = true
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0.751909, 6.40062 )
+shape = SubResource( 2 )

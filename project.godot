@@ -14,26 +14,44 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/actors/Actor.gd"
 }, {
-"base": "StaticBody2D",
+"base": "Interactable",
 "class": "Computer",
 "language": "GDScript",
 "path": "res://src/objects/Computer.gd"
 }, {
-"base": "Actor",
-"class": "Player",
+"base": "StaticBody2D",
+"class": "Countdown",
 "language": "GDScript",
-"path": "res://src/actors/Player.gd"
+"path": "res://src/objects/Countdown.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Interactable",
+"language": "GDScript",
+"path": "res://src/objects/Interactable.gd"
+}, {
+"base": "Actor",
+"class": "Spaceman",
+"language": "GDScript",
+"path": "res://src/actors/Spaceman.gd"
+}, {
+"base": "Interactable",
+"class": "WaterCooler",
+"language": "GDScript",
+"path": "res://src/objects/WaterCooler.gd"
 } ]
 _global_script_class_icons={
 "Actor": "",
 "Computer": "",
-"Player": ""
+"Countdown": "",
+"Interactable": "",
+"Spaceman": "",
+"WaterCooler": ""
 }
 
 [application]
 
 config/name="cosmic"
-run/main_scene="res://src/levels/Level0.tscn"
+run/main_scene="res://src/levels/ship/ShipLevel0.tscn"
 config/icon="res://assets/icon.png"
 
 [autoload]
