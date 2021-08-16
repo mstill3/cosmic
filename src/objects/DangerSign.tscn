@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/danger1.png" type="Texture" id=1]
+[ext_resource path="res://assets/danger2.png" type="Texture" id=2]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "onoff",
+"speed": 2.0
+} ]
+
+[node name="DangerSign" type="AnimatedSprite"]
+position = Vector2( 23.8929, -7.5559 )
+scale = Vector2( 0.980453, 0.843626 )
+frames = SubResource( 1 )
+animation = "onoff"
+frame = 1
+playing = true

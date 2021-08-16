@@ -1,7 +1,14 @@
 extends Actor
 class_name Spaceman
 
+
+onready var anim_sprite: AnimatedSprite = $AnimatedSprite
 var interact: bool = false
+
+
+func _ready() -> void:
+	anim_sprite.animation = "idle"
+	anim_sprite.playing = true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact"):
@@ -14,7 +21,11 @@ func _input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	var direction := get_direction()
 	_velocity = calculate_move_velocity(_velocity, direction, speed)
-	$AnimatedSprite.flip_h = _velocity.x < 0
+	anim_sprite.flip_h = _velocity.x < 0
+	if _velocity == Vector2.ZERO:
+		anim_sprite.animation = "idle"
+	else:
+		anim_sprite.animation = "move"
 	_velocity = move_and_slide(_velocity)
 
 

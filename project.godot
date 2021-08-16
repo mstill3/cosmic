@@ -50,8 +50,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="cosmic"
-run/main_scene="res://src/levels/ship/ShipLevel0.tscn"
+config/name="NebulaOS"
+run/main_scene="res://src/levels/Ship.tscn"
 config/icon="res://assets/icon.png"
 
 [autoload]
@@ -106,4 +106,5 @@ interact={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

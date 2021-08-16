@@ -2,7 +2,8 @@ extends Interactable
 class_name Computer
 
 
-export var minigame: PackedScene
+#export (String, FILE) var next_scene_path := ""
+signal boot_pc
 
 onready var anim_sprite: AnimatedSprite = $AnimatedSprite
 
@@ -23,5 +24,23 @@ func _process(delta: float) -> void:
 
 
 func _on_AnimatedSprite_animation_finished() -> void:
-#	if is_on:
-	print(is_on)
+	if is_on:
+		emit_signal("boot_pc")
+
+func turn_off() -> void:
+	is_on = false
+	anim_sprite.animation = "shut_down"
+	anim_sprite.playing = true
+			
+
+#func _get_configuration_warning() -> String:
+#	if not next_scene_path:
+#		return "Need to set next scene path"
+#	else:
+##		return ""
+#
+#
+#func _on_Terminal_disconnect() -> void:
+#	is_on = false
+#	anim_sprite.animation = "shut_down"
+#	anim_sprite.playing = true

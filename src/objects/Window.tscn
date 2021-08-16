@@ -1,9 +1,49 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/objects/Window.gd" type="Script" id=1]
+[ext_resource path="res://assets/spacetile1.png" type="Texture" id=2]
+[ext_resource path="res://assets/meteror3.png" type="Texture" id=3]
+[ext_resource path="res://assets/meteror2.png" type="Texture" id=4]
+[ext_resource path="res://assets/meteror1.png" type="Texture" id=5]
+[ext_resource path="res://assets/earth.png" type="Texture" id=6]
+[ext_resource path="res://assets/laser.png" type="Texture" id=7]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "move",
+"speed": 2.0
+} ]
 
 [node name="Window" type="Node2D"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 26.3868, 131.172 ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 165.0
+margin_bottom = 50.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MeteorSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 14.2704, 22.3536 )
+frames = SubResource( 1 )
+animation = "move"
+frame = 2
+playing = true
+
+[node name="EarthSprite" type="Sprite" parent="."]
+position = Vector2( 144.807, 22.3698 )
+scale = Vector2( 0.223449, 0.223449 )
+texture = ExtResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
-centered = false
+position = Vector2( 16.3849, 56.6603 )
+scale = Vector2( 0.526749, 0.580294 )
+texture = ExtResource( 7 )

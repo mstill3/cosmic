@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/levels/Terminal.gd" type="Script" id=1]
+[ext_resource path="res://assets/spacetile1.png" type="Texture" id=2]
+[ext_resource path="res://assets/SpaceMono-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 9
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 9
+extra_spacing_bottom = -5
+font_data = ExtResource( 3 )
+
+[node name="Terminal" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 66.0
+margin_top = 6.0
+margin_right = 66.0
+margin_bottom = 6.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.498039, 0.498039, 0.498039, 0.784314 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IntroText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -119.991
+margin_top = -75.4777
+margin_right = 50.0093
+margin_bottom = -21.4777
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.654902, 0.917647, 0.466667, 1 )
+text = "Welcome to NebulaOS
+Type HELP for commands:
+> "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -111.0
+margin_top = -38.0
+margin_right = 123.0
+margin_bottom = -22.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.654902, 0.917647, 0.466667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PCText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -119.0
+margin_top = -23.0
+margin_right = 120.0
+margin_bottom = -7.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.654902, 0.917647, 0.466667, 1 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
